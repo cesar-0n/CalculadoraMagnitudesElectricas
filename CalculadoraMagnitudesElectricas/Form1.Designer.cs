@@ -39,11 +39,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.numericUpDown_cosFi = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown_potenciaCC = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_potenciaActiva = new System.Windows.Forms.NumericUpDown();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button_borrar = new System.Windows.Forms.Button();
-            this.label_potenciaCC = new System.Windows.Forms.Label();
+            this.label_potenciaActiva = new System.Windows.Forms.Label();
             this.label_resistencia = new System.Windows.Forms.Label();
             this.label_intensidadCC = new System.Windows.Forms.Label();
             this.label_tension = new System.Windows.Forms.Label();
@@ -52,18 +52,27 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label_potenciaCA_III = new System.Windows.Forms.Label();
+            this.label_potenciaReactiva = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label_potenciaCA_II = new System.Windows.Forms.Label();
-            this.label_intensidadCA_II = new System.Windows.Forms.Label();
+            this.label_potenciaAparente = new System.Windows.Forms.Label();
+            this.label_anguloFi = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label_intensidadCA_III = new System.Windows.Forms.Label();
+            this.label_cosFi = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.numericUpDown_anguloFi = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_potenciaAparente = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_potenciaReactiva = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_tension)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_intensidadCC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_resistencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_cosFi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_potenciaCC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_potenciaActiva)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_anguloFi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_potenciaAparente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_potenciaReactiva)).BeginInit();
             this.SuspendLayout();
             // 
             // numericUpDown_tension
@@ -149,7 +158,8 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 16);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Cos φ";
+            this.label6.Text = "F.P. (Cos φ)";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // numericUpDown_cosFi
             // 
@@ -178,23 +188,23 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 16);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Potencia (W)";
+            this.label4.Text = "Potencia activa (W)";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // numericUpDown_potenciaCC
+            // numericUpDown_potenciaActiva
             // 
-            this.numericUpDown_potenciaCC.DecimalPlaces = 4;
-            this.numericUpDown_potenciaCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown_potenciaCC.Location = new System.Drawing.Point(138, 77);
-            this.numericUpDown_potenciaCC.Maximum = new decimal(new int[] {
+            this.numericUpDown_potenciaActiva.DecimalPlaces = 4;
+            this.numericUpDown_potenciaActiva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown_potenciaActiva.Location = new System.Drawing.Point(138, 77);
+            this.numericUpDown_potenciaActiva.Maximum = new decimal(new int[] {
             -727379969,
             232,
             0,
             0});
-            this.numericUpDown_potenciaCC.Name = "numericUpDown_potenciaCC";
-            this.numericUpDown_potenciaCC.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown_potenciaCC.TabIndex = 6;
-            this.numericUpDown_potenciaCC.ValueChanged += new System.EventHandler(this.numericUpDown_potenciaCC_ValueChanged);
+            this.numericUpDown_potenciaActiva.Name = "numericUpDown_potenciaActiva";
+            this.numericUpDown_potenciaActiva.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown_potenciaActiva.TabIndex = 6;
+            this.numericUpDown_potenciaActiva.ValueChanged += new System.EventHandler(this.numericUpDown_potenciaActiva_ValueChanged);
             // 
             // timer1
             // 
@@ -227,16 +237,16 @@
             this.button_borrar.UseVisualStyleBackColor = false;
             this.button_borrar.Click += new System.EventHandler(this.button_borrar_Click);
             // 
-            // label_potenciaCC
+            // label_potenciaActiva
             // 
-            this.label_potenciaCC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label_potenciaCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_potenciaCC.Location = new System.Drawing.Point(138, 201);
-            this.label_potenciaCC.Name = "label_potenciaCC";
-            this.label_potenciaCC.Size = new System.Drawing.Size(120, 23);
-            this.label_potenciaCC.TabIndex = 21;
-            this.label_potenciaCC.Text = "0 W";
-            this.label_potenciaCC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_potenciaActiva.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label_potenciaActiva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_potenciaActiva.Location = new System.Drawing.Point(138, 201);
+            this.label_potenciaActiva.Name = "label_potenciaActiva";
+            this.label_potenciaActiva.Size = new System.Drawing.Size(120, 23);
+            this.label_potenciaActiva.TabIndex = 21;
+            this.label_potenciaActiva.Text = "0 W";
+            this.label_potenciaActiva.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_resistencia
             // 
@@ -318,19 +328,19 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(123, 16);
             this.label11.TabIndex = 31;
-            this.label11.Text = "Potencia CA III";
+            this.label11.Text = "Potencia reactiva";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label_potenciaCA_III
+            // label_potenciaReactiva
             // 
-            this.label_potenciaCA_III.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label_potenciaCA_III.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_potenciaCA_III.Location = new System.Drawing.Point(438, 201);
-            this.label_potenciaCA_III.Name = "label_potenciaCA_III";
-            this.label_potenciaCA_III.Size = new System.Drawing.Size(120, 23);
-            this.label_potenciaCA_III.TabIndex = 37;
-            this.label_potenciaCA_III.Text = "0 W";
-            this.label_potenciaCA_III.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_potenciaReactiva.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label_potenciaReactiva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_potenciaReactiva.Location = new System.Drawing.Point(438, 201);
+            this.label_potenciaReactiva.Name = "label_potenciaReactiva";
+            this.label_potenciaReactiva.Size = new System.Drawing.Size(120, 23);
+            this.label_potenciaReactiva.TabIndex = 37;
+            this.label_potenciaReactiva.Text = "0 VAR";
+            this.label_potenciaReactiva.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -339,30 +349,30 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 16);
             this.label5.TabIndex = 44;
-            this.label5.Text = "Potencia CA II";
+            this.label5.Text = "Potencia aparente";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label_potenciaCA_II
+            // label_potenciaAparente
             // 
-            this.label_potenciaCA_II.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label_potenciaCA_II.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_potenciaCA_II.Location = new System.Drawing.Point(312, 202);
-            this.label_potenciaCA_II.Name = "label_potenciaCA_II";
-            this.label_potenciaCA_II.Size = new System.Drawing.Size(120, 23);
-            this.label_potenciaCA_II.TabIndex = 43;
-            this.label_potenciaCA_II.Text = "0 W";
-            this.label_potenciaCA_II.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_potenciaAparente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label_potenciaAparente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_potenciaAparente.Location = new System.Drawing.Point(312, 202);
+            this.label_potenciaAparente.Name = "label_potenciaAparente";
+            this.label_potenciaAparente.Size = new System.Drawing.Size(120, 23);
+            this.label_potenciaAparente.TabIndex = 43;
+            this.label_potenciaAparente.Text = "0 VA";
+            this.label_potenciaAparente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label_intensidadCA_II
+            // label_anguloFi
             // 
-            this.label_intensidadCA_II.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label_intensidadCA_II.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_intensidadCA_II.Location = new System.Drawing.Point(312, 146);
-            this.label_intensidadCA_II.Name = "label_intensidadCA_II";
-            this.label_intensidadCA_II.Size = new System.Drawing.Size(120, 23);
-            this.label_intensidadCA_II.TabIndex = 42;
-            this.label_intensidadCA_II.Text = "0 A";
-            this.label_intensidadCA_II.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_anguloFi.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label_anguloFi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_anguloFi.Location = new System.Drawing.Point(312, 146);
+            this.label_anguloFi.Name = "label_anguloFi";
+            this.label_anguloFi.Size = new System.Drawing.Size(120, 23);
+            this.label_anguloFi.TabIndex = 42;
+            this.label_anguloFi.Text = "0 °";
+            this.label_anguloFi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label14
             // 
@@ -371,19 +381,19 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(123, 16);
             this.label14.TabIndex = 41;
-            this.label14.Text = "Intensidad CA II";
+            this.label14.Text = "Ángulo φ";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label_intensidadCA_III
+            // label_cosFi
             // 
-            this.label_intensidadCA_III.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label_intensidadCA_III.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_intensidadCA_III.Location = new System.Drawing.Point(438, 146);
-            this.label_intensidadCA_III.Name = "label_intensidadCA_III";
-            this.label_intensidadCA_III.Size = new System.Drawing.Size(120, 23);
-            this.label_intensidadCA_III.TabIndex = 46;
-            this.label_intensidadCA_III.Text = "0 A";
-            this.label_intensidadCA_III.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_cosFi.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label_cosFi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_cosFi.Location = new System.Drawing.Point(438, 146);
+            this.label_cosFi.Name = "label_cosFi";
+            this.label_cosFi.Size = new System.Drawing.Size(120, 23);
+            this.label_cosFi.TabIndex = 46;
+            this.label_cosFi.Text = "0";
+            this.label_cosFi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label20
             // 
@@ -392,28 +402,106 @@
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(123, 16);
             this.label20.TabIndex = 45;
-            this.label20.Text = "Intensidad CA III";
+            this.label20.Text = "F.P. (Cos φ)";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(309, 6);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(123, 16);
+            this.label12.TabIndex = 50;
+            this.label12.Text = "Ángulo φ";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(312, 58);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(120, 16);
+            this.label13.TabIndex = 51;
+            this.label13.Text = "Potencia aparente";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(435, 58);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(123, 16);
+            this.label15.TabIndex = 52;
+            this.label15.Text = "Potencia reactiva";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // numericUpDown_anguloFi
+            // 
+            this.numericUpDown_anguloFi.DecimalPlaces = 4;
+            this.numericUpDown_anguloFi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown_anguloFi.Location = new System.Drawing.Point(312, 25);
+            this.numericUpDown_anguloFi.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
+            this.numericUpDown_anguloFi.Name = "numericUpDown_anguloFi";
+            this.numericUpDown_anguloFi.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown_anguloFi.TabIndex = 53;
+            // 
+            // numericUpDown_potenciaAparente
+            // 
+            this.numericUpDown_potenciaAparente.DecimalPlaces = 4;
+            this.numericUpDown_potenciaAparente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown_potenciaAparente.Location = new System.Drawing.Point(312, 77);
+            this.numericUpDown_potenciaAparente.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
+            this.numericUpDown_potenciaAparente.Name = "numericUpDown_potenciaAparente";
+            this.numericUpDown_potenciaAparente.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown_potenciaAparente.TabIndex = 54;
+            // 
+            // numericUpDown_potenciaReactiva
+            // 
+            this.numericUpDown_potenciaReactiva.DecimalPlaces = 4;
+            this.numericUpDown_potenciaReactiva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown_potenciaReactiva.Location = new System.Drawing.Point(438, 77);
+            this.numericUpDown_potenciaReactiva.Maximum = new decimal(new int[] {
+            -727379969,
+            232,
+            0,
+            0});
+            this.numericUpDown_potenciaReactiva.Name = "numericUpDown_potenciaReactiva";
+            this.numericUpDown_potenciaReactiva.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown_potenciaReactiva.TabIndex = 55;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 289);
-            this.Controls.Add(this.label_intensidadCA_III);
+            this.ClientSize = new System.Drawing.Size(614, 289);
+            this.Controls.Add(this.numericUpDown_potenciaReactiva);
+            this.Controls.Add(this.numericUpDown_potenciaAparente);
+            this.Controls.Add(this.numericUpDown_anguloFi);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label_cosFi);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label_potenciaCA_II);
-            this.Controls.Add(this.label_intensidadCA_II);
+            this.Controls.Add(this.label_potenciaAparente);
+            this.Controls.Add(this.label_anguloFi);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.label_potenciaCA_III);
+            this.Controls.Add(this.label_potenciaReactiva);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label_tension);
-            this.Controls.Add(this.label_potenciaCC);
+            this.Controls.Add(this.label_potenciaActiva);
             this.Controls.Add(this.label_resistencia);
             this.Controls.Add(this.label_intensidadCC);
             this.Controls.Add(this.button_borrar);
@@ -421,7 +509,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.numericUpDown_cosFi);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.numericUpDown_potenciaCC);
+            this.Controls.Add(this.numericUpDown_potenciaActiva);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numericUpDown_resistencia);
             this.Controls.Add(this.label2);
@@ -438,7 +526,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_intensidadCC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_resistencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_cosFi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_potenciaCC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_potenciaActiva)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_anguloFi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_potenciaAparente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_potenciaReactiva)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -454,11 +545,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown numericUpDown_cosFi;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown_potenciaCC;
+        private System.Windows.Forms.NumericUpDown numericUpDown_potenciaActiva;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button_borrar;
-        private System.Windows.Forms.Label label_potenciaCC;
+        private System.Windows.Forms.Label label_potenciaActiva;
         private System.Windows.Forms.Label label_resistencia;
         private System.Windows.Forms.Label label_intensidadCC;
         private System.Windows.Forms.Label label_tension;
@@ -467,13 +558,19 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label_potenciaCA_III;
+        private System.Windows.Forms.Label label_potenciaReactiva;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label_potenciaCA_II;
-        private System.Windows.Forms.Label label_intensidadCA_II;
+        private System.Windows.Forms.Label label_potenciaAparente;
+        private System.Windows.Forms.Label label_anguloFi;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label_intensidadCA_III;
+        private System.Windows.Forms.Label label_cosFi;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.NumericUpDown numericUpDown_anguloFi;
+        private System.Windows.Forms.NumericUpDown numericUpDown_potenciaAparente;
+        private System.Windows.Forms.NumericUpDown numericUpDown_potenciaReactiva;
     }
 }
 

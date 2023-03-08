@@ -36,7 +36,7 @@ namespace CalculadoraMagnitudesElectricas
             tension = numericUpDown_tension.Value;
             intensidadCC = numericUpDown_intensidadCC.Value;
             resistencia = numericUpDown_resistencia.Value;
-            potenciaCC = numericUpDown_potenciaCC.Value;
+            potenciaCC = numericUpDown_potenciaActiva.Value;
             cosFi = numericUpDown_cosFi.Value;
 
             //TENSIÓN
@@ -46,14 +46,14 @@ namespace CalculadoraMagnitudesElectricas
                 tension = numericUpDown_intensidadCC.Value * numericUpDown_resistencia.Value;
             }
             //V = Pcc / I
-            if (numericUpDown_potenciaCC.Value != 0 && numericUpDown_intensidadCC.Value != 0)
+            if (numericUpDown_potenciaActiva.Value != 0 && numericUpDown_intensidadCC.Value != 0)
             {
-                tension = numericUpDown_potenciaCC.Value / numericUpDown_intensidadCC.Value;
+                tension = numericUpDown_potenciaActiva.Value / numericUpDown_intensidadCC.Value;
             }
             //V = sqrt (P * R)
-            if (numericUpDown_potenciaCC.Value != 0 && numericUpDown_resistencia.Value != 0)
+            if (numericUpDown_potenciaActiva.Value != 0 && numericUpDown_resistencia.Value != 0)
             {
-                tension = (decimal)Math.Sqrt((double)numericUpDown_potenciaCC.Value * (double)numericUpDown_resistencia.Value);
+                tension = (decimal)Math.Sqrt((double)numericUpDown_potenciaActiva.Value * (double)numericUpDown_resistencia.Value);
             }
         //INTENSIDADCC
             //I = V / R
@@ -62,14 +62,14 @@ namespace CalculadoraMagnitudesElectricas
                 intensidadCC = numericUpDown_tension.Value / numericUpDown_resistencia.Value;
             }
             //I = P / V
-            if (numericUpDown_potenciaCC.Value != 0 && numericUpDown_tension.Value != 0)
+            if (numericUpDown_potenciaActiva.Value != 0 && numericUpDown_tension.Value != 0)
             {
-                intensidadCC = numericUpDown_potenciaCC.Value / numericUpDown_tension.Value;
+                intensidadCC = numericUpDown_potenciaActiva.Value / numericUpDown_tension.Value;
             }
             //I = sqrt (P / R)
-            if (numericUpDown_potenciaCC.Value != 0 && numericUpDown_resistencia.Value != 0)
+            if (numericUpDown_potenciaActiva.Value != 0 && numericUpDown_resistencia.Value != 0)
             {
-                intensidadCC = (decimal)Math.Sqrt((double)numericUpDown_potenciaCC.Value / (double)numericUpDown_resistencia.Value);
+                intensidadCC = (decimal)Math.Sqrt((double)numericUpDown_potenciaActiva.Value / (double)numericUpDown_resistencia.Value);
             }
         //RESISTENCIA
             //R = V / I
@@ -78,14 +78,14 @@ namespace CalculadoraMagnitudesElectricas
                 resistencia = numericUpDown_tension.Value / numericUpDown_intensidadCC.Value;
             }
             //R = P / I^2
-            if (numericUpDown_potenciaCC.Value != 0 && numericUpDown_intensidadCC.Value != 0)
+            if (numericUpDown_potenciaActiva.Value != 0 && numericUpDown_intensidadCC.Value != 0)
             {
-                resistencia = numericUpDown_potenciaCC.Value / (decimal)Math.Pow((double)numericUpDown_intensidadCC.Value, 2);
+                resistencia = numericUpDown_potenciaActiva.Value / (decimal)Math.Pow((double)numericUpDown_intensidadCC.Value, 2);
             }
             //R = V^2 / P
-            if (numericUpDown_tension.Value != 0 && numericUpDown_potenciaCC.Value != 0)
+            if (numericUpDown_tension.Value != 0 && numericUpDown_potenciaActiva.Value != 0)
             {
-                resistencia = (decimal)Math.Pow((double)numericUpDown_tension.Value, 2) / numericUpDown_potenciaCC.Value;
+                resistencia = (decimal)Math.Pow((double)numericUpDown_tension.Value, 2) / numericUpDown_potenciaActiva.Value;
             }
         //POTENCIA
             //P = I * V
@@ -135,10 +135,10 @@ namespace CalculadoraMagnitudesElectricas
                 else { label_resistencia.ForeColor = Color.Green; } }
             else { label_resistencia.ForeColor = Color.Black; }
 
-            if (numericUpDown_potenciaCC.Value != potenciaCC) { if (numericUpDown_potenciaCC.Value != 0) {
-                    label_potenciaCC.ForeColor = Color.Red; }
-                else { label_potenciaCC.ForeColor = Color.Green; } }
-            else { label_potenciaCC.ForeColor = Color.Black; }
+            if (numericUpDown_potenciaActiva.Value != potenciaCC) { if (numericUpDown_potenciaActiva.Value != 0) {
+                    label_potenciaActiva.ForeColor = Color.Red; }
+                else { label_potenciaActiva.ForeColor = Color.Green; } }
+            else { label_potenciaActiva.ForeColor = Color.Black; }
             //|| Convert.ToInt16(label_potenciaCC.Text) == 0
             //if (cosFi == 0)
             //{
@@ -149,29 +149,29 @@ namespace CalculadoraMagnitudesElectricas
             //}
 
             if (intensidadCA_II!= 0) {
-                label_intensidadCA_II.ForeColor = Color.Green; }
-            else { label_intensidadCA_II.ForeColor = Color.Black; }
+                label_anguloFi.ForeColor = Color.Green; }
+            else { label_anguloFi.ForeColor = Color.Black; }
 
             if (intensidadCA_III != 0) {
-                label_intensidadCA_III.ForeColor = Color.Green; }
-            else { label_intensidadCA_III.ForeColor = Color.Black; }
+                label_cosFi.ForeColor = Color.Green; }
+            else { label_cosFi.ForeColor = Color.Black; }
 
             if (potenciaCA_II != 0) {
-                label_potenciaCA_II.ForeColor = Color.Green; }
-            else { label_potenciaCA_II.ForeColor = Color.Black; }
+                label_potenciaAparente.ForeColor = Color.Green; }
+            else { label_potenciaAparente.ForeColor = Color.Black; }
 
             if (potenciaCA_III != 0) {
-                label_potenciaCA_III.ForeColor = Color.Green; }
-            else { label_potenciaCA_III.ForeColor = Color.Black; }
+                label_potenciaReactiva.ForeColor = Color.Green; }
+            else { label_potenciaReactiva.ForeColor = Color.Black; }
 
             label_tension.Text = Math.Round(tension, 4) + " V";
             label_intensidadCC.Text = Math.Round(intensidadCC, 4) + " A";
-            label_intensidadCA_II.Text = Math.Round(intensidadCA_II, 4) + " A";
-            label_intensidadCA_III.Text = Math.Round(intensidadCA_III, 4) + " A";
+            label_anguloFi.Text = Math.Round(intensidadCA_II, 4) + " A";
+            label_cosFi.Text = Math.Round(intensidadCA_III, 4) + " A";
             label_resistencia.Text = Math.Round(resistencia, 4) + " Ω";
-            label_potenciaCC.Text = Math.Round(potenciaCC, 4) + " W";
-            label_potenciaCA_II.Text = Math.Round(potenciaCA_II, 4) + " W";
-            label_potenciaCA_III.Text = Math.Round(potenciaCA_III, 4) + " W";
+            label_potenciaActiva.Text = Math.Round(potenciaCC, 4) + " W";
+            label_potenciaAparente.Text = Math.Round(potenciaCA_II, 4) + " W";
+            label_potenciaReactiva.Text = Math.Round(potenciaCA_III, 4) + " W";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -195,7 +195,7 @@ namespace CalculadoraMagnitudesElectricas
             numericUpDown_tension.Value = 0;
             numericUpDown_intensidadCC.Value = 0;
             numericUpDown_resistencia.Value = 0;
-            numericUpDown_potenciaCC.Value = 0;
+            numericUpDown_potenciaActiva.Value = 0;
             numericUpDown_cosFi.Value = 0;
         }
 
@@ -214,7 +214,7 @@ namespace CalculadoraMagnitudesElectricas
             calcular();
         }
 
-        private void numericUpDown_potenciaCC_ValueChanged(object sender, EventArgs e)
+        private void numericUpDown_potenciaActiva_ValueChanged(object sender, EventArgs e)
         {
             calcular();
         }
